@@ -1,9 +1,14 @@
 <section class="h-[100vh] rounded-md m-auto flex justify-center items-center bg-[rgba(255,255,255,0.5)]  container" >
-<div *ngIf="!formSubmitted" class=" shadow-inner rounded-md w-[85%] laptop-sm:w-[50%] shadow-[#93c5fd] flex flex-col items-center laptop-sm:items-stretch">
+<div *ngIf="!formSubmitted" class=" shadow-inner rounded-md w-[85%] laptop-sm:w-[70%] shadow-[#93c5fd] flex flex-col items-center laptop-sm:items-stretch">
     <div class="text-2xl mt-3 laptop-sm:text-center font-semibold">
         LEAVE US A MESSAGE!
     </div>
-    <div>
+    <div class="w-full">
+        <div class="h-[200px] w-[350px] flex justify-center items-center m-auto 
+        laptop-sm:w-[400px] laptop-sm:h-[200px]">
+
+            <div class="svg-background"></div>
+        </div>
         <form class="flex flex-col px-4 py-6" [formGroup]="contactForm" action="https://api.web3forms.com/submit" method="POST">
             <input type="hidden" name="access_key" value="0e3198d9-8a5c-4031-9955-f0674edfd3e3" />
             <label for="email">EMAIL ADDRESS</label>
