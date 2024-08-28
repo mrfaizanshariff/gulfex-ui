@@ -28,11 +28,14 @@
     object-fit: cover;
     border-radius: 10px;
   }
-  
+  .fil1 {fill:#2F4282;fill-rule:nonzero}
   @media (max-width: 600px){
       .service-img{
           width: 300px;
       }
+  }
+  #text1{
+    font-family: 'Batangas',sans-serif;
   }
 
   .services-svg-container {
