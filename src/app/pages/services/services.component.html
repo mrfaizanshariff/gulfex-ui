@@ -1,7 +1,7 @@
 <main>
 <section id="section" class="h-[50vh] laptop-sm:h-[100vh]
     bg-cover bg-top laptop-sm:bg-bottom hero-section
-bg-[url('https://images.pexels.com/photos/3254725/pexels-photo-3254725.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')]
+bg-[url('https://images.pexels.com/photos/50987/money-card-business-credit-card-50987.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')]
 laptop-sm:bg-[url('https://images.pexels.com/photos/3763190/pexels-photo-3763190.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')]">
 <app-header class="relative z-10" ></app-header>
     
@@ -10,7 +10,7 @@ laptop-sm:bg-[url('https://images.pexels.com/photos/3763190/pexels-photo-3763190
         <span class="laptop-sm:text-7xl text-3xl" id="text1"></span>
         <span class="laptop-sm:text-7xl text-3xl" id="text2" ></span>
     </div>
-    <span routerLink="/" class="callToAction z-[9] text-black font-bold tracking-tight bg-blue-700  opacity-0 mt-5  cursor-pointer laptop-sm:text-3xl text-xl"></span>
+    <span routerLink="/contact" class="callToAction z-[9] text-black font-bold tracking-tight bg-blue-700  opacity-0 mt-5  cursor-pointer laptop-sm:text-3xl text-xl"></span>
 </div>
 
 </section>
@@ -23,7 +23,7 @@ p-4 laptop-sm:p-[4%] text-[#333333] flex flex-col items-center bg-blue-300">
         </div>
         <div class="grid grid-cols-1 gap-5 laptop-lg:grid-cols-3  laptop-sm:grid-cols-2">
             <div routerLink="/services" class="p-6 hover:scale-105 transition-all cursor-pointer" *ngFor="let service of servicesData">
-                <img  class="service-img" [src]="service.src" alt="">
+                <div [innerHtml]="service.src"></div>
                 <div class="text-3xl mt-6 font-bold laptop-sm:text-4xl">
                     {{service.title}}
                 </div>
@@ -31,6 +31,7 @@ p-4 laptop-sm:p-[4%] text-[#333333] flex flex-col items-center bg-blue-300">
                     <p>{{service.desc}}</p>
                 </div>
             </div>
+            
         </div>
         <button routerLink="/" class="z-[9] p-3 laptop-sm:p-4 rounded-md text-black font-bold tracking-tight bg-blue-700  mt-5  
         cursor-pointer text-xl laptop-sm:text-2xl">
