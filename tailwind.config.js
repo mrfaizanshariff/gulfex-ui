@@ -5,6 +5,7 @@ module.exports = {
   ],
   theme: {
     screens: {
+      'xsm':'400px',
       'tablet': '640px',
       // => @media (min-width: 640px) { ... }
 
