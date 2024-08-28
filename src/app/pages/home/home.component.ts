@@ -82,7 +82,7 @@ export class HomeComponent implements OnInit {
       },
   ]
   ngOnInit(): void {
-    this.textAnimation();
+    // this.textAnimation();
     gsap.to('.contact-svg',{
       rotate:360,
       ease:'none',
@@ -90,24 +90,24 @@ export class HomeComponent implements OnInit {
       duration:8
     })
   }
-  textAnimation(){
-    const tl = gsap.timeline({repeat:0,yoyo:true})
-    tl.to("#title",{
-      transform: 'skew(-10deg)'
-    })
-    .to("#title #text1",{
-      duration:1, text:"Gulfex",
-      color:'blue'
-    })
-    .to("#title #text2",{
-      duration:1, text:"Commercial Broker",
-      // fontStyle:"italic",
-      color:"black"
-    })
-    .set(".callToAction",{text: "Know More"})
-    .to(".callToAction",{
-      opacity:1,
-      padding:'10px',
-      transform: 'skew(-10deg)',    })
-  }
+  // textAnimation(){
+  //   const tl = gsap.timeline({repeat:0,yoyo:true})
+  //   tl.to("#title",{
+  //     transform: 'skew(-10deg)'
+  //   })
+  //   .to("#title #text1",{
+  //     duration:1, text:"Gulfex",
+  //     color:'blue'
+  //   })
+  //   .to("#title #text2",{
+  //     duration:1, text:"Commercial Broker",
+  //     // fontStyle:"italic",
+  //     color:"black"
+  //   })
+  //   .set(".callToAction",{text: "Know More"})
+  //   .to(".callToAction",{
+  //     opacity:1,
+  //     padding:'10px',
+  //     transform: 'skew(-10deg)',    })
+  // }
 }

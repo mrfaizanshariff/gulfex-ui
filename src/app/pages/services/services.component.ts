@@ -82,7 +82,7 @@ export class ServicesComponent implements OnInit {
     .to("#title #text2",{
       duration:1, text:"Offer",
       // fontStyle:"italic",
-      color:"blue"
+      color:"#2f4282"
     })
     .set(".callToAction",{text: "Contact"})
     .to(".callToAction",{

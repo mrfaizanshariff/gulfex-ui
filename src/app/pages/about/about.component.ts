@@ -35,7 +35,7 @@ export class AboutComponent implements OnInit {
     .to("#title #text2",{
       duration:1, text:"GULFEX",
       // fontStyle:"italic",
-      color:"blue"
+      color:"#2f4282"
     })
     .set(".callToAction",{text: "Know More"})
     .to(".callToAction",{
