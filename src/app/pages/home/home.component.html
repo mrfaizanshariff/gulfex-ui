@@ -17,7 +17,7 @@ laptop-sm:bg-[url('/assets/homePagebg.jpeg')]">
         </div>
         <div class="laptop-sm:text-5xl text-black text-2xl" id="text2" >Commercial Broker</div>
     </div>
-    <span routerLink="/about" class="callToAction z-[9] text-black font-bold tracking-tight bg-blue-700  opacity-0 mt-5  cursor-pointer laptop-sm:text-3xl text-xl"></span>
+    <span routerLink="/about" class="callToAction z-[9] text-black font-bold tracking-tight bg-blue-300  opacity-0 mt-5  cursor-pointer laptop-sm:text-3xl text-xl"></span>
 </div>
 
 </section>
@@ -39,7 +39,7 @@ laptop-sm:bg-[url('/assets/homePagebg.jpeg')]">
     </button>
 </section>
 <section class="section-three
-p-4 laptop-sm:p-[4%] text-[#333333] flex flex-col items-center bg-blue-300">
+p-4 laptop-sm:p-[4%] text-[#fff] flex flex-col items-center bg-[#2f4282]">
         <div class="text-4xl font-bold laptop-sm:text-8xl my-8">
         Our Services
         <hr>
@@ -50,12 +50,12 @@ p-4 laptop-sm:p-[4%] text-[#333333] flex flex-col items-center bg-blue-300">
                 <div class="text-3xl mt-6 font-bold laptop-sm:text-4xl">
                     {{service.title}}
                 </div>
-                <div class="text-lg">
+                <div class="text-md">
                     <p>{{service.desc}}</p>
                 </div>
             </div>
         </div>
-        <button routerLink="/services" class="z-[9] p-3 laptop-sm:p-4 rounded-md text-black font-bold tracking-tight bg-blue-700  mt-5  
+        <button routerLink="/services" class="z-[9] p-3 laptop-sm:p-4 rounded-md text-black font-bold tracking-tight bg-blue-300  mt-5  
         cursor-pointer text-xl laptop-sm:text-2xl">
         OUR SERVICES
         </button>          
@@ -64,7 +64,7 @@ p-4 laptop-sm:p-[4%] text-[#333333] flex flex-col items-center bg-blue-300">
             p-4 laptop-sm:p-[4%] text-[#333333] flex flex-col items-center bg-white">
         <div class="flex flex-col">
             <div class="text-4xl font-bold laptop-sm:text-8xl my-8">
-                OUR EXPERTISE
+                Our Expertise
                 <hr>
             </div>
             <div class="flex flex-col laptop-sm:flex-row justify-around items-center gap-5 ">
@@ -74,6 +74,55 @@ p-4 laptop-sm:p-[4%] text-[#333333] flex flex-col items-center bg-blue-300">
                 </div>
             </div>            
         </div>
+</section>
+<section class="section-five
+p-4 laptop-sm:p-[4%] text-[#fff] flex flex-col items-center bg-[#2f4282]">
+        <div class=" text-4xl tablet:text-6xl font-bold laptop-sm:text-8xl my-4">
+        Careers
+        <hr>
+        </div>
+        <div>
+            <div class=" flex flex-col gap-4 tablet:flex-row  rounded-3xl  py-[4%] px-[2%]">
+                <div class="tablet:w-[70%]">
+                    <p class="text-lg font-medium">
+                        Gulfex is dedicated to transforming staff into highly skilled financial professionals. <br>
+                        We actively recruit for various roles across our teams, offering opportunities for career growth in the financial sector. <br>
+                        If you're seeking your next career move in banking or finance, we invite you to explore the exciting opportunities available at Gulfex.
+                    </p>
+                </div>
+                <hr class="tabler:hidden">
+                <div class="flex flex-col w-[85%] gap-2 justify-evenly text-md">
+                    <div  class="flex items-start" >
+                        <span class="material-symbols-outlined">
+                            chevron_right
+                        </span>
+                        <span>
+                            We provide competitive salaries along with flexible working hours.
+                        </span>
+                    </div>
+                    <div class="flex items-start">
+                        <span class="material-symbols-outlined">
+                            chevron_right
+                        </span>
+                        <span>
+                            Comprehensive training is offered to ensure you are fully prepared before starting in the field.
+                        </span>
+                    </div>
+                    <div class="flex items-start">
+                        <span class="material-symbols-outlined">
+                            chevron_right
+                        </span>
+                        <span>
+                            Numerous career opportunities are available, ranging from entry-level positions to executive roles.
+                        </span>
+                    </div>
+                </div>
+               </div>
+        </div>
+        <button routerLink="/contact" class="z-[9] p-3 laptop-sm:p-4 rounded-md text-black font-bold tracking-tight bg-blue-300  mt-5  
+        cursor-pointer text-xl laptop-sm:text-2xl">
+        Connect with us
+        </button>          
 </section>
 <app-contact-social></app-contact-social>
 </main>
