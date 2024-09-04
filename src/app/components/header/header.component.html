@@ -86,7 +86,7 @@ border-b-[1px] bg-[rgba(256,256,256,0.9)] text-2xl border-black p-4">
     <div routerLink="/services" class="cursor-pointer hover:text-blue-700">Services</div>
     <div routerLink="/contact" class="cursor-pointer hover:text-blue-700">Contact us</div>
 </nav>
-<nav class="flex h-[20%]  items-center justify-between pr-2 bg-[rgba(256,256,256,0.9)] laptop-sm:hidden">
+<nav class="flex h-[20%] overflow-hidden  items-center justify-between pr-2 bg-[rgba(256,256,256,0.9)] laptop-sm:hidden">
     <span routerLink="" class="text-2xl pl-[10%] flex-[1] flex justify-center">
         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" width="100" height="45" version="1.1" style="shape-rendering:geometricPrecision;text-rendering:geometricPrecision;image-rendering:optimizeQuality;fill-rule:evenodd;clip-rule:evenodd;width:200px;height: 60px;" viewBox="0 0 16098 6220">
             <g id="Layer_x0020_1">
@@ -174,7 +174,7 @@ border-b-[1px] bg-[rgba(256,256,256,0.9)] text-2xl border-black p-4">
     
     <div  [@slideInOut]="menuState" class="z-50 laptop-sm:hidden h-[100vh] sidenav  absolute top-0 menu flex flex-col justify-start min-w-[100%] bg-[#2f4282] ">
         <div class="py-3 px-4 flex justify-end shadow-[0_3px_6px_0_rgba(0,0,0,0.08)]">
-            <span class="z-20 text-4xl text-white material-symbols-outlined" (click)="menuClick(false)">
+            <span class="z-20 cursor-pointer text-4xl text-white material-symbols-outlined" (click)="menuClick(false)">
                 close
             </span>
         </div>
