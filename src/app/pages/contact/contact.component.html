@@ -1,18 +1,14 @@
-<section class="my-7 rounded-md m-auto flex justify-center items-center bg-[rgba(255,255,255,0.5)]  container" >
-<div *ngIf="!formSubmitted" class=" bg-blue-300 shadow-sm rounded-md w-[85%] laptop-sm:w-[70%] shadow-[gray] flex flex-col items-center laptop-sm:items-stretch">
+<section class=" min-h-[100vh] w-full flex justify-center items-center bg-black" >
+<div *ngIf="!formSubmitted" class=" bg-white shadow-sm  w-[85%] laptop-sm:w-[70%] shadow-[gray] flex flex-col items-center laptop-sm:items-stretch">
     <div class="text-2xl mt-3 laptop-sm:text-center font-semibold">
-        LEAVE US A MESSAGE!
+        Register Your Interest
     </div>
     <div class="w-full " >
-        <div class="h-[175px] w-[300px] flex justify-center items-center m-auto 
-        laptop-sm:w-[400px] laptop-sm:h-[200px]">
 
-            <div class="svg-background"></div>
-        </div>
         <form class="flex flex-col px-4 py-6" [formGroup]="contactForm" action="https://api.web3forms.com/submit" method="POST">
             <input type="hidden" name="access_key" value="0e3198d9-8a5c-4031-9955-f0674edfd3e3" />
-            <label for="email">EMAIL ADDRESS</label>
-            <input class="border-blue-300 border rounded-md p-3" formControlName="email" type="email" required="true" name="email" type="text">
+            <label for="email" required="true">EMAIL ADDRESS</label>
+            <input class="border-[#aaa] border-[0.5px]  p-3" formControlName="email" type="email" required="true" name="email" type="text">
             
             <div *ngIf="email?.invalid && (email?.dirty || email?.touched)">
             <div *ngIf="email?.errors?.['required']" class="text-red-600">Email is required</div>
@@ -20,38 +16,38 @@
             </div>
     
             <label for="name">YOUR NAME</label>
-            <input formControlName="name" class="border-blue-300 border rounded-md p-3" required="true" name="name" type="text">
+            <input formControlName="name" class="border-[#aaa] border-[0.5px]  p-3" required="true" name="name" type="text">
             <div *ngIf="name?.invalid && (name?.dirty || name?.touched)">
                 <div *ngIf="name?.errors?.['required']" class="text-red-600">Name is required</div>
             </div>
             
             <label for="message">Message</label>
             <!-- <input type="text" required="true" name="message" type="text"> -->
-            <textarea formControlName="message" class="border-blue-300 border rounded-md p-3 h-[30vh]" required="true" name="message" id="" cols="30" rows="10"></textarea>
+            <textarea formControlName="message" class="border-[#aaa] border-[0.5px]  p-3 h-[30vh]" required="true" name="message" id="" cols="30" rows="10"></textarea>
             <div *ngIf="message?.invalid && (message?.dirty || message?.touched)">
                 <div *ngIf="message?.errors?.['required']" class="text-red-600">Message is required</div>
             </div>
             <input type="hidden" name="redirect" value="https://web3forms.com/success">
         </form>
-        <div class="text-center flex  justify-around gap-[30%]
+        <div class="text-center flex text-white justify-around gap-[10%]
         laptop-sm:gap-0">
-            <button (click)="submit()"  type="submit" class="bg-blue-300 hover:bg-white rounded-md text-xl font-semibold px-3 py-1 mb-3">
+            <button (click)="submit()"  type="submit" class="bg-black hover:bg-white  text-xl font-semibold px-4 py-2 mb-3">
                 <span >SUBMIT</span>
             </button>
-            <button routerLink="/"  class="bg-blue-300 hover:bg-white rounded-md text-xl font-semibold px-3 py-1 mb-3">
+            <button routerLink="/"  class="bg-black hover:bg-white  text-xl font-semibold px-4 py-2 mb-3">
                 <span >HOME</span>
             </button>
         </div>
     </div>
 </div>
-<div *ngIf="formSubmitted" class="text-6xl laptop-sm:text-8xl laptop-sm:min-w-[40vw] flex flex-col items-center
+<div *ngIf="formSubmitted" class="text-6xl text-white laptop-sm:text-8xl laptop-sm:min-w-[40vw] flex flex-col items-center
  justify-between min-w-[70vw] submittedForm">
     <div class="pt-[20vh]"> 
         Thank you <br>
         
 
     </div>
-    <button routerLink="/"  class="bg-blue-300 hover:bg-white rounded-md text-xl font-semibold px-3 py-1 mt-9 mb-3">
+    <button routerLink="/"  class="bg-black hover:bg-white  text-xl font-semibold px-3 py-1 mt-9 mb-3">
         <span >HOME</span>
     </button>
 </div>

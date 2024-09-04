@@ -11,7 +11,7 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { ServicesComponent } from './pages/services/services.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ContactSocialComponent } from './components/contact-social/contact-social.component';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +27,8 @@ import { ContactSocialComponent } from './components/contact-social/contact-soci
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
