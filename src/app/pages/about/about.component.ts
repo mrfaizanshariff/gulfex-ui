@@ -47,22 +47,11 @@ export class AboutComponent implements OnInit {
   }
   textAnimation(){
     const tl = gsap.timeline({repeat:0,yoyo:true})
-    tl.to("#title",{
-      transform: 'skew(-10deg)'
+    tl.from("#title",{
+      x: 400,
+      duration: 1,
+      opacity: 0
     })
-    .to("#title #text1",{
-      duration:1, text:"What is",
-      color:'black'
-    })
-    .to("#title #text2",{
-      duration:1, text:"GULFEX",
-      // fontStyle:"italic",
-      color:"#2f4282"
-    })
-    .set(".callToAction",{text: "Know More"})
-    .to(".callToAction",{
-      opacity:1,
-      padding:'10px',
-      transform: 'skew(-10deg)',    })
+
   }
 }

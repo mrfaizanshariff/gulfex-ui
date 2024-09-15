@@ -90,17 +90,10 @@ export class ServicesComponent implements OnInit {
   }
   textAnimation(){
     const tl = gsap.timeline({repeat:0,yoyo:true})
-    tl.to("#title",{
-      transform: 'skew(-10deg)'
-    })
-    .to("#title #text1",{
-      duration:1, text:"What We",
-      color:'black'
-    })
-    .to("#title #text2",{
-      duration:1, text:"Offer",
-      // fontStyle:"italic",
-      color:"#2f4282"
+    tl.from("#title",{
+      x: 400,
+      duration: 1,
+      opacity: 0
     })
     
   }
