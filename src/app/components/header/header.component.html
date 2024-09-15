@@ -86,8 +86,8 @@ border-b-[1px] bg-transparent text-2xl border-none p-4">
     <div routerLink="/services" class="cursor-pointer font-semibold hover:text-blue-700">Services</div>
     <div routerLink="/contact" class="cursor-pointer font-semibold hover:text-blue-700">Contact us</div>
 </nav>
-<nav class="flex h-[20%]  w-full z-50 overflow-hidden  
-items-center justify-between pr-2 bg-[rgba(256,256,256,0.9)] laptop-sm:hidden">
+<nav class="flex h-[20%] overflow-hidden  items-center justify-between pr-2 laptop-sm:hidden"
+    [style.background-color]="isHomePage ? 'transparent':'#ffffff8c'">
     <span routerLink="" class="text-2xl pl-[10%] flex-[1] flex justify-center">
         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" width="100" height="45" version="1.1" style="shape-rendering:geometricPrecision;text-rendering:geometricPrecision;image-rendering:optimizeQuality;fill-rule:evenodd;clip-rule:evenodd;width:200px;height: 60px;" viewBox="0 0 16098 6220">
             <g id="Layer_x0020_1">
@@ -169,8 +169,11 @@ items-center justify-between pr-2 bg-[rgba(256,256,256,0.9)] laptop-sm:hidden">
             </g>
            </svg>
     </span>
-    <span class="z-10"  (click)="menuClick(true)">
+    <span class="z-10" *ngIf="!isHomePage" (click)="menuClick(true)">
         <svg xmlns="http://www.w3.org/2000/svg" class="scale-[-1]" width="40px" height="40px" viewBox="0 0 28 28" fill="none"><path d="M4 7C4 6.44771 4.44772 6 5 6H24C24.5523 6 25 6.44771 25 7C25 7.55229 24.5523 8 24 8H5C4.44772 8 4 7.55229 4 7Z" fill="#000000"/><path d="M4 13.9998C4 13.4475 4.44772 12.9997 5 12.9997L16 13C16.5523 13 17 13.4477 17 14C17 14.5523 16.5523 15 16 15L5 14.9998C4.44772 14.9998 4 14.552 4 13.9998Z" fill="#000000"/><path d="M5 19.9998C4.44772 19.9998 4 20.4475 4 20.9998C4 21.552 4.44772 21.9997 5 21.9997H22C22.5523 21.9997 23 21.552 23 20.9998C23 20.4475 22.5523 19.9998 22 19.9998H5Z" fill="#000000"/></svg>
+    </span>
+    <span class="z-10" *ngIf="isHomePage"  (click)="menuClick(true)">
+        <svg xmlns="http://www.w3.org/2000/svg" class="scale-[-1]" width="40px" height="40px" viewBox="0 0 28 28" fill="none"><path d="M4 7C4 6.44771 4.44772 6 5 6H24C24.5523 6 25 6.44771 25 7C25 7.55229 24.5523 8 24 8H5C4.44772 8 4 7.55229 4 7Z" fill="#FFF"/><path d="M4 13.9998C4 13.4475 4.44772 12.9997 5 12.9997L16 13C16.5523 13 17 13.4477 17 14C17 14.5523 16.5523 15 16 15L5 14.9998C4.44772 14.9998 4 14.552 4 13.9998Z" fill="#FFF"/><path d="M5 19.9998C4.44772 19.9998 4 20.4475 4 20.9998C4 21.552 4.44772 21.9997 5 21.9997H22C22.5523 21.9997 23 21.552 23 20.9998C23 20.4475 22.5523 19.9998 22 19.9998H5Z" fill="#FFF"/></svg>
     </span>
     
     <div  [@slideInOut]="menuState" class="z-50 laptop-sm:hidden h-[100vh] sidenav  absolute top-0 menu flex flex-col justify-start min-w-[100%] bg-[#2f4282] ">
@@ -190,14 +193,12 @@ items-center justify-between pr-2 bg-[rgba(256,256,256,0.9)] laptop-sm:hidden">
                 <li routerLink="/services"  class="text-lg leading-8 uppercase">
                    Services
                 </li>
+                <li routerLink="/contact"  class="text-lg leading-8 uppercase">
+                   Contact Us
+                </li>
                
                 
             </ul>
-            <div routerLink="/contact" class="flex items-center justify-center gap-2 bg-white w-full px-4 py-[11px] text-lg leading-6 font-semibold text-brand-blue">
-                <span class="material-symbols-outlined">
-                    mail
-                </span>
-                 Get in touch
-        </div></div>
+        </div>
     </div>
 </nav>

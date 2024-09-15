@@ -1,5 +1,6 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { gsap } from "gsap";
 @Component({
   selector: 'app-header',
@@ -22,10 +23,13 @@ export class HeaderComponent implements OnInit,OnChanges {
   showMenu: boolean=false;
   menuState: string='out';
   @Input() scroll: boolean = false;
-
-  constructor() { }
+  isHomePage: boolean = false;
+  constructor(private route:ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.isHomePage = this.route.snapshot.url.length ? false : true;
+    console.log(this.isHomePage);
+    
   }
   ngOnChanges(changes: SimpleChanges): void {
     console.log(this.scroll)
@@ -45,7 +49,6 @@ export class HeaderComponent implements OnInit,OnChanges {
     }
   }
   menuClick(val:boolean){
-    console.log(val);
     this.menuState = this.menuState === 'out' ? 'in' : 'out';
     this.showMenu=val;
   }
