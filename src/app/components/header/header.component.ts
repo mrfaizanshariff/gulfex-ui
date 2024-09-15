@@ -1,5 +1,5 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { gsap } from "gsap";
 @Component({
   selector: 'app-header',
@@ -18,13 +18,31 @@ import { gsap } from "gsap";
     ]),
   ]
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit,OnChanges {
   showMenu: boolean=false;
   menuState: string='out';
+  @Input() scroll: boolean = false;
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log(this.scroll)
+    if(this.scroll){
+      gsap.to(".nav",{
+        color:"black",
+        background:"white",
+        duration:0.3,
+        // fontWeight:"bold"
+      })
+    }else{
+      gsap.to(".nav",{
+        color:"white",
+        background:"transparent",
+        duration:0.3,
+      })
+    }
   }
   menuClick(val:boolean){
     console.log(val);

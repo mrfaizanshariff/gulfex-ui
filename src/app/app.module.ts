@@ -12,6 +12,7 @@ import { ServicesComponent } from './pages/services/services.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ContactSocialComponent } from './components/contact-social/contact-social.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { YouTubePlayerModule } from '@angular/youtube-player';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +29,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    YouTubePlayerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
