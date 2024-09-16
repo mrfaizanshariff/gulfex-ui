@@ -21,3 +21,36 @@
         margin-top: 20px;
     }
 }
+
+.input-group {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    overflow: hidden; /* Ensures rounded borders look unified */
+    max-width: 400px;
+    margin: auto;
+  }
+  
+  .country-code-dropdown {
+    border: none;
+    padding: 10px;
+    background-color: #f9f9f9;
+    font-size: 14px;
+    width: 80px; /* Set a fixed width for the dropdown */
+    appearance: none; /* Removes default dropdown arrow */
+    border-right: 1px solid #ccc;
+  }
+  
+  .phone-number-input {
+    flex: 1;
+    border: none;
+    padding: 10px;
+    font-size: 14px;
+    outline: none;
+  }
+  
+  .phone-number-input::placeholder {
+    color: #aaa;
+  }
+  

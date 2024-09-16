@@ -1,55 +1,142 @@
-<section class=" min-h-[100vh] w-full flex justify-center items-center bg-black" >
 
-<div *ngIf="!formSubmitted" class=" bg-white shadow-sm  w-[85%] laptop-sm:w-[70%] shadow-[gray] flex flex-col items-center laptop-sm:items-stretch">
-    <div class="text-2xl mt-3 laptop-sm:text-center font-semibold">
-        Register Your Interest
-    </div>
-    <div class="w-full " >
-
-        <form class="flex flex-col px-4 py-6" [formGroup]="contactForm" action="https://api.web3forms.com/submit" method="POST">
-            <input type="hidden" name="access_key" value="0e3198d9-8a5c-4031-9955-f0674edfd3e3" />
-            <label for="email" required="true">EMAIL ADDRESS</label>
-            <input class="border-[#aaa] border-[0.5px]  p-3" formControlName="email" type="email" required="true" name="email" type="text">
-            
-            <div *ngIf="email?.invalid && (email?.dirty || email?.touched)">
-            <div *ngIf="email?.errors?.['required']" class="text-red-600">Email is required</div>
-            <div *ngIf="email?.errors?.['email']" class="text-red-600">Invalid Email format</div>
-            </div>
-    
-            <label for="name">YOUR NAME</label>
-            <input formControlName="name" class="border-[#aaa] border-[0.5px]  p-3" required="true" name="name" type="text">
-            <div *ngIf="name?.invalid && (name?.dirty || name?.touched)">
-                <div *ngIf="name?.errors?.['required']" class="text-red-600">Name is required</div>
-            </div>
-            
-            <label for="message">Message</label>
-            <!-- <input type="text" required="true" name="message" type="text"> -->
-            <textarea formControlName="message" class="border-[#aaa] border-[0.5px]  p-3 h-[30vh]" required="true" name="message" id="" cols="30" rows="10"></textarea>
-            <div *ngIf="message?.invalid && (message?.dirty || message?.touched)">
-                <div *ngIf="message?.errors?.['required']" class="text-red-600">Message is required</div>
-            </div>
-            <input type="hidden" name="redirect" value="https://web3forms.com/success">
-        </form>
-        <div class="text-center flex text-white justify-around gap-[10%]
-        laptop-sm:gap-0">
-            <button (click)="submit()"  type="submit" class="bg-black hover:bg-white hover:text-black  text-xl font-semibold px-4 py-2 mb-3">
-                <span >SUBMIT</span>
-            </button>
-            <button routerLink="/"  class="bg-black hover:bg-white hover:text-black  text-xl font-semibold px-4 py-2 mb-3">
-                <span >HOME</span>
-            </button>
+<main class="overflow-hidden bg-black">
+    <section class=" min-h-[100vh]  w-full overflow-hidden flex flex-col gap-8 " >
+        <div>
+            <app-header [scroll]="scroll" class="relative z-10" ></app-header>
         </div>
-    </div>
-</div>
-<div *ngIf="formSubmitted" class="text-6xl text-white laptop-sm:text-8xl laptop-sm:min-w-[40vw] flex flex-col items-center
- justify-between min-w-[70vw] submittedForm">
-    <div class="pt-[20vh]"> 
-        Thank you <br>
+        <div class="flex flex-col-reverse items-stretch tablet:flex-row tablet:px-8 tablet:pt-16 justify-around tablet:items-start">
+            <div class="location-section laptop-sm:w-[50%] flex  gap-8 flex-col items-center justify-stretch">
+                <div class="h-[40vh] w-full
+                    bg-[url('https://images.pexels.com/photos/325193/pexels-photo-325193.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')]
+                    bg-cover bg-top">
         
+                </div>
+                <div class="flex flex-col items-center tablet:flex-row  justify-around w-full">
+                    <ul class="text-white  text-md  laptop-sm:text-lg ">
+                        <li>
+                            M07, Prime Medical Center building,
+                        </li>
+                        <li>
+                            Opposite Reef Mall,
+                        </li>
+                        <li>
+                            Salah Al Din Metro Exit 2, Deira, Dubai.
+                        </li>
+                        <li>
+                            <strong>Email:</strong> info@gulfex.co
+                        </li>
+                        <li>
+                            <strong>Phone:</strong> +971 42387177
+                        </li>
+                    </ul>
+                    <div class="mt-6 tablet:m-0 h-[200px] w-[300px] tablet:w-[300px] tablet:h-[200px] laptop-lg:w-[300px] laptop-lg:h-[200px]">
+                        <iframe class=" w-full h-full" src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3607.998054748527!2d55.31952667538405!3d25.270650877663684!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjXCsDE2JzE0LjMiTiA1NcKwMTknMTkuNiJF!5e0!3m2!1sen!2sin!4v1724866739286!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+                <div class="flex flex-col items-center mt-8 mb-8 laptop-sm:mb-0 laptop-sm:mt-0">
+                    <div class="text-white text-lg laptop-sm:text-xl">OUR SOCIALS</div>
+                    <div class="text-white laptop-sm:text-xl flex gap-6 justify-between">
+                       <a target="_blank" href="https://www.linkedin.com/company/gulfex-financing/">
+                           
+                           <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#fff" height="40px" width="40px" version="1.1" id="Layer_1" viewBox="-143 145 512 512" xml:space="preserve">
+                                    <path d="M113,145c-141.4,0-256,114.6-256,256s114.6,256,256,256s256-114.6,256-256S254.4,145,113,145z M41.4,508.1H-8.5V348.4h49.9  V508.1z M15.1,328.4h-0.4c-18.1,0-29.8-12.2-29.8-27.7c0-15.8,12.1-27.7,30.5-27.7c18.4,0,29.7,11.9,30.1,27.7  C45.6,316.1,33.9,328.4,15.1,328.4z M241,508.1h-56.6v-82.6c0-21.6-8.8-36.4-28.3-36.4c-14.9,0-23.2,10-27,19.6  c-1.4,3.4-1.2,8.2-1.2,13.1v86.3H71.8c0,0,0.7-146.4,0-159.7h56.1v25.1c3.3-11,21.2-26.6,49.8-26.6c35.5,0,63.3,23,63.3,72.4V508.1z  "/>
+                                    </svg>
+                            </span>
+                       </a> 
+                       <a href="mailto:info@gulfex.co">
+                           <span>
+                               <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#fff" height="40px" width="40px" version="1.1" id="Layer_1" viewBox="0 0 512 512" xml:space="preserve">
+                                   <g>
+                                       <g>
+                                           <path d="M410.272,243.145c-3.63-4.486-10.211-5.179-14.695-1.548l-3.636,2.942c-4.485,3.631-5.177,10.211-1.546,14.696    c2.066,2.551,5.083,3.875,8.128,3.875c2.309,0,4.634-0.762,6.568-2.328l3.635-2.942    C413.21,254.209,413.903,247.63,410.272,243.145z"/>
+                                       </g>
+                                   </g>
+                                   <g>
+                                       <g>
+                                           <path d="M380.363,267.357c-3.63-4.486-10.211-5.179-14.695-1.549l-74.708,59.674c-4.485,3.631-5.177,10.21-1.546,14.695    c2.064,2.551,5.082,3.875,8.127,3.875c2.309,0,4.634-0.762,6.568-2.327l74.708-59.674    C383.301,278.421,383.994,271.843,380.363,267.357z"/>
+                                       </g>
+                                   </g>
+                                   <g>
+                                       <g>
+                                           <path d="M449.742,62.685H62.258C27.929,62.685,0,90.614,0,124.942v262.117c0,34.329,27.929,62.257,62.258,62.257h387.484    c34.33,0,62.258-27.928,62.258-62.257V124.942C512,90.614,484.072,62.685,449.742,62.685z M419.912,83.582L255.859,216.19    L91.806,83.582H419.912z M428.126,428.418H83.592V184.382l165.712,133.49c3.826,3.082,9.284,3.082,13.11,0l165.711-133.49V428.418    z M491.102,387.058c0,22.806-18.554,41.359-41.36,41.359h-0.717v-265.87c0-4.023-2.309-7.688-5.939-9.425    c-3.632-1.738-7.934-1.235-11.065,1.288L255.859,296.318L79.697,154.41c-3.134-2.523-7.438-3.026-11.065-1.288    c-3.63,1.737-5.939,5.402-5.939,9.425v265.87h-0.436c-22.805,0.001-41.359-18.553-41.359-41.358V124.942    c0-21.626,16.688-39.418,37.861-41.2l190.532,154.012c1.915,1.549,4.242,2.323,6.568,2.323c2.327,0,4.653-0.774,6.568-2.323    L452.983,83.721c21.295,1.66,38.119,19.507,38.119,41.22V387.058z"/>
+                                       </g>
+                                   </g>
+                                   </svg>
+                           </span>
+                       </a>
+                       <a href="https://wa.me/97142387177">
+                           <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40px" height="40px" viewBox="0 0 24 24" fill="none">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M3.50002 12C3.50002 7.30558 7.3056 3.5 12 3.5C16.6944 3.5 20.5 7.30558 20.5 12C20.5 16.6944 16.6944 20.5 12 20.5C10.3278 20.5 8.77127 20.0182 7.45798 19.1861C7.21357 19.0313 6.91408 18.9899 6.63684 19.0726L3.75769 19.9319L4.84173 17.3953C4.96986 17.0955 4.94379 16.7521 4.77187 16.4751C3.9657 15.176 3.50002 13.6439 3.50002 12ZM12 1.5C6.20103 1.5 1.50002 6.20101 1.50002 12C1.50002 13.8381 1.97316 15.5683 2.80465 17.0727L1.08047 21.107C0.928048 21.4637 0.99561 21.8763 1.25382 22.1657C1.51203 22.4552 1.91432 22.5692 2.28599 22.4582L6.78541 21.1155C8.32245 21.9965 10.1037 22.5 12 22.5C17.799 22.5 22.5 17.799 22.5 12C22.5 6.20101 17.799 1.5 12 1.5ZM14.2925 14.1824L12.9783 15.1081C12.3628 14.7575 11.6823 14.2681 10.9997 13.5855C10.2901 12.8759 9.76402 12.1433 9.37612 11.4713L10.2113 10.7624C10.5697 10.4582 10.6678 9.94533 10.447 9.53028L9.38284 7.53028C9.23954 7.26097 8.98116 7.0718 8.68115 7.01654C8.38113 6.96129 8.07231 7.046 7.84247 7.24659L7.52696 7.52195C6.76823 8.18414 6.3195 9.2723 6.69141 10.3741C7.07698 11.5163 7.89983 13.314 9.58552 14.9997C11.3991 16.8133 13.2413 17.5275 14.3186 17.8049C15.1866 18.0283 16.008 17.7288 16.5868 17.2572L17.1783 16.7752C17.4313 16.5691 17.5678 16.2524 17.544 15.9269C17.5201 15.6014 17.3389 15.308 17.0585 15.1409L15.3802 14.1409C15.0412 13.939 14.6152 13.9552 14.2925 14.1824Z" fill="#fff"/>
+                                </svg>
+                           </span>
+                       </a>
+                       <a href="tel:+97142387177">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40px" height="40px" viewBox="0 0 24 24" fill="none">
+                            <path d="M21 5.5C21 14.0604 14.0604 21 5.5 21C5.11378 21 4.73086 20.9859 4.35172 20.9581C3.91662 20.9262 3.69906 20.9103 3.50103 20.7963C3.33701 20.7019 3.18146 20.5345 3.09925 20.364C3 20.1582 3 19.9181 3 19.438V16.6207C3 16.2169 3 16.015 3.06645 15.842C3.12515 15.6891 3.22049 15.553 3.3441 15.4456C3.48403 15.324 3.67376 15.255 4.05321 15.117L7.26005 13.9509C7.70153 13.7904 7.92227 13.7101 8.1317 13.7237C8.31637 13.7357 8.49408 13.7988 8.64506 13.9058C8.81628 14.0271 8.93713 14.2285 9.17882 14.6314L10 16C12.6499 14.7999 14.7981 12.6489 16 10L14.6314 9.17882C14.2285 8.93713 14.0271 8.81628 13.9058 8.64506C13.7988 8.49408 13.7357 8.31637 13.7237 8.1317C13.7101 7.92227 13.7904 7.70153 13.9509 7.26005L13.9509 7.26005L15.117 4.05321C15.255 3.67376 15.324 3.48403 15.4456 3.3441C15.553 3.22049 15.6891 3.12515 15.842 3.06645C16.015 3 16.2169 3 16.6207 3H19.438C19.9181 3 20.1582 3 20.364 3.09925C20.5345 3.18146 20.7019 3.33701 20.7963 3.50103C20.9103 3.69907 20.9262 3.91662 20.9581 4.35173C20.9859 4.73086 21 5.11378 21 5.5Z" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                       </a>
+                    </div>
+                </div>
+            </div>
+            <div class="tablet:ml-8 bg-white shadow-sm laptop-sm:w-[50%] relative shadow-[gray] flex flex-col items-center laptop-sm:items-stretch">
+                <div class="absolute text-2xl font-bold top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]"
+                    [style.opacity]="formSubmitted?1:0">
+                    Thank you for contacting us
+                </div>
+                <div class="text-2xl mt-3 laptop-sm:text-center font-semibold">
+                    Register Your Interest
+                </div>
+                <div class="w-full z-2 "  [style.opacity]="formSubmitted?0:1" >
+            
+                    <form class="flex flex-col gap-4 px-4 py-6 " [formGroup]="contactForm" action="https://api.web3forms.com/submit" method="POST">
+                        
+                        <input [style.opacity]="formSubmitted ? 0 : 1" placeholder="Full Name" formControlName="name" class="focus-within:outline-none border-[#aaa] border-[0.5px]  p-3" required="true" name="name" type="text">
+                        <div *ngIf="name?.invalid && (name?.dirty || name?.touched)">
+                            <div *ngIf="name?.errors?.['required']" class="text-red-600">Name is required</div>
+                        </div>
+        
+                        <input type="hidden" name="access_key" value="0e3198d9-8a5c-4031-9955-f0674edfd3e3" />
+                        
+                        <input [style.opacity]="formSubmitted ? 0 : 1"  placeholder="Email Address" class="focus-within:outline-none border-[#aaa] border-[0.5px]  p-3" formControlName="email" type="email" required="true" name="email" type="text">
+                        
+                        <div *ngIf="email?.invalid && (email?.dirty || email?.touched)">
+                        <div *ngIf="email?.errors?.['required']" class="text-red-600">Email is required</div>
+                        <div *ngIf="email?.errors?.['email']" class="text-red-600">Invalid Email format</div>
+                        </div>
+                
+                        <div [style.opacity]="formSubmitted ? 0 : 1" class="border-[#aaa] border-[0.5px]  ">
+                            <select formControlName="countryCode" class="focus-within:outline-none w-[35%]">
+                                <option value=""  selected>Country Code</option>
+                                <option *ngFor="let country of countryCodes" [value]="country.code">
+                                  {{ country.name }}-{{ country.code }}
+                                </option>
+                              </select>
+                          
+                              <!-- Input field for phone number -->
+                              <input  required="true" type="number" formControlName="phoneNumber" class="focus-within:outline-none p-3 w-[65%]" placeholder="Enter your mobile number" />
+                            </div>
+                            <div *ngIf="contactForm.get('phoneNumber')?.invalid && (contactForm.get('phoneNumber')?.dirty || contactForm.get('phoneNumber')?.touched)">
+                              <div *ngIf="contactForm.get('phoneNumber')?.errors?.['required']" class="text-red-600">Phone Number is required</div>
+                              </div>
+                        
+                        
+                        <!-- <input type="text" required="true" name="message" type="text"> -->
+                        <textarea [style.opacity]="formSubmitted ? 0 : 1"  placeholder="Message" formControlName="message" class="focus-within:outline-none border-[#aaa] border-[0.5px]  p-3 h-[30vh]" required="true" name="message" id="" cols="30" rows="10"></textarea>
+                       
+                        <input type="hidden" name="redirect" value="https://web3forms.com/success">
+                    </form>
+                    <div class="text-center flex text-white justify-around gap-[10%]
+                    laptop-sm:gap-0">
+                        <button (click)="submit()"  type="submit" class="bg-black hover:bg-white hover:text-black  text-xl font-semibold px-4 py-2 mb-3">
+                            <span >SUBMIT</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+    </section>
+</main>
 
-    </div>
-    <button routerLink="/"  class="bg-black hover:bg-white hover:text-black  text-xl font-semibold px-3 py-1 mt-9 mb-3">
-        <span >HOME</span>
-    </button>
-</div>
-</section>

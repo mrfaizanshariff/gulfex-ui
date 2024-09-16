@@ -27,7 +27,9 @@ export class HeaderComponent implements OnInit,OnChanges {
   constructor(private route:ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.isHomePage = this.route.snapshot.url.length ? false : true;
+    
+    
+    this.isHomePage = this.route.snapshot.url.length === 0 || this.route.snapshot.url[0].path === 'contact' ? true : false;
     console.log(this.isHomePage);
     
   }
