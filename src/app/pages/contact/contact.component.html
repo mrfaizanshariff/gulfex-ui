@@ -119,7 +119,10 @@
                             </div>
                             <div *ngIf="contactForm.get('phoneNumber')?.invalid && (contactForm.get('phoneNumber')?.dirty || contactForm.get('phoneNumber')?.touched)">
                               <div *ngIf="contactForm.get('phoneNumber')?.errors?.['required']" class="text-red-600">Phone Number is required</div>
-                              </div>
+                            </div>
+                            <div *ngIf="contactForm.get('countryCode')?.invalid && (contactForm.get('countryCode')?.dirty || contactForm.get('countryCode')?.touched)">
+                              <div *ngIf="contactForm.get('countryCode')?.errors?.['required']" class="text-red-600">Country Code is required</div>
+                            </div>
                         
                         
                         <!-- <input type="text" required="true" name="message" type="text"> -->
